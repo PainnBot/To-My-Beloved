@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى رفيقة الدرب | هاجر</title>
+    
+    <!-- خطوط عربية فاخرة وحديثة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #F9F8F6;
+            --bg-secondary: #FFFFFF;
+            --bg-tertiary: #F1EFEA;
+            --text-main: #1C232B;
+            --text-muted: #5C6773;
+            --accent: #8E5A44; /* ترابي دافئ راقي */
+            --accent-soft: #EFE7E1;
+            --border: #E2DDD6;
+            --border-dark: #2B3542;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Amiri', serif;
+        }
+
+        /* حاوية العرض */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* الهيدر */
+        header {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .date-badge {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.8rem;
+            border-radius: 4px;
+            background: var(--bg-secondary);
+        }
+
+        /* قسم البداية (Hero) */
+        .hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .quote-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-right: 4px solid var(--accent);
+            padding: 1.5rem 2rem;
+            margin: 3rem auto;
+            max-width: 700px;
+            border-radius: 4px;
+            text-align: right;
+            box-shadow: var(--shadow);
+        }
+
+        .quote-box p {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* الخط الفاصل */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            margin: 4rem 0;
+        }
+
+        /* العناوين العامة للأقسام */
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: right;
+        }
+
+        .section-header .sub-title {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* خط الرحلة (Timeline) */
+        .timeline {
+            position: relative;
+            padding-right: 2rem;
+            border-right: 2px solid var(--border);
+            margin-bottom: 4rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -2.45rem;
+            top: 0.25rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 3px solid var(--accent);
+        }
+
+        .timeline-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 1.8rem;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .timeline-card .time {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .timeline-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* شبكة الذكريات والعالم المشترك (Grid) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .card-icon {
+            font-size: 1.75rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* قسم العهود والوعود */
+        .vows-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow);
+        }
+
+        .vow-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .vow-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .vow-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .vow-num {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 2rem;
+        }
+
+        .vow-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
+        }
+
+        .vow-text p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* رسالة سرية تفاعلية */
+        .interactive-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .btn-reveal {
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(142, 90, 68, 0.2);
+        }
+
+        .btn-reveal:hover {
+            background: #734532;
+            transform: translateY(-2px);
+        }
+
+        .secret-message {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-top: 2rem;
+            text-align: right;
+            padding: 0 2rem;
+        }
+
+        .secret-message.active {
+            max-height: 500px;
+            opacity: 1;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* الفوتر */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* تأثيرات الحركة عند التمرير */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .vows-section {
+                padding: 2rem 1.5rem;
+            }
+            .timeline {
+                padding-right: 1.5rem;
+            }
+            .timeline-dot {
+                right: -1.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الهيدر -->
+        <header>
+            <div class="logo serif">عبد الرحمن & هاجر</div>
+            <div class="date-badge">بداية العهد الجديد</div>
+        </header>
+
+        <!-- البداية والرسالة الأولى -->
+        <section class="hero fade-in">
+            <span class="hero-tag">إلى رفيقة الدرب وسكن الفؤاد</span>
+            <h1 class="serif">لكِ وحدكِ.. حيث تبدأ السكينة ويكتمل المعنى</h1>
+            <p>
+                هدية متواضعة خالية من بهرجة الكلمات المصطنعة، توثّق عهداً قطعناه بالصدق، وخطوات مشيناها بالصبر، وبيتاً أسسناه بالنية الطيبة بما يرضي الله وحده.
+            </p>
+
+            <div class="quote-box">
+                <p class="serif">
+                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+                </p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- محطات الرحلة -->
+        <section class="fade-in">
+            <div class="section-header">
+                <span class="sub-title">محطات مشيناها سوياً</span>
+                <h2>حكايتنا خطوة بخطوة</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="time">البداية والوضوح</span>
+                        <h3>حديث العقل والقلب</h3>
+                        <p>
+                            من أول يوم تكلمنا فيه بوضوح تام، عن المبادئ، والحدود، والنية في بناء بيت هادئ قائم على الاحترام والاتفاق على ما يرضي الله قبل كل شيء.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="time">أيام الجد والتعب</span>
+                        <h3>دعم المذاكرة وشغف النجاح</h3>
+                        <p>
+                            أيام الامتحانات الطويلة، وتلخيص المناهج، والسهر حتى الفجر، وتشجيعك الدائم لي في العمل والمشاريع بينما كنتِ تحاربين للوصول لتخرجك بامتياز.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="time">بناء البيت حجر بحجر</span>
+                        <h3>تنسيق التفاصيل والذوق المشترك</h3>
+                        <p>
+                            رحلة اختيار أركان شقتنا: من ألوان الخشب الهادئة، واختيار المطبخ والدولاب، إلى التفاصيل الدقيقة التي اتفقنا على أن تكون بسيطة، عملية، ومريحة لأرواحنا.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="time">يوم العهد</span>
+                        <h3>اكتمال الحلم والميثاق الغليظ</h3>
+                        <p>
+                            اليوم الذي أصبحتِ فيه شريكة حياتي رسمياً وزوجتي الغالية، لنبدأ كتابة أول صفحات بيتنا المستقل بكل حب ووئام.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- تفاصيل عالمنا الصغير -->
+        <section class="fade-in">
+            <div class="section-header">
+                <span class="sub-title">ملامح من عالمنا الصغير</span>
+                <h2>ذكريات وتفاصيل تصنع هويتنا</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="card fade-in">
+                    <div class="card-icon">☕</div>
+                    <h3>مواعيد الليل والقهوة</h3>
+                    <p>
+                        أوقات الهدوء بعد عناء يوم طويل، ومحاولات ضبط مواعيد النوم التي تنتهي دائماً بأحاديث عميقة وخطط للمستقبل.
+                    </p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🐾</div>
+                    <h3>عائلة القطط ومشاغباتها</h3>
+                    <p>
+                        قصص قشطة ومشاغباته التي لا تنتهي، والدوشة اللطيفة التي تصنع جواً مميزاً وابتسامة وسط زحمة اليوم.
+                    </p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🎨</div>
+                    <h3>الهاند ميد والصبر</h3>
+                    <p>
+                        شغفك بصناعة الأشياء الجميلة بيديكِ، والروح الهادئة التي تضعينها في كل تفصيلة صغيرة تلمسينها.
+                    </p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🌿</div>
+                    <h3>السكينة والابتعاد عن الزحام</h3>
+                    <p>
+                        رغبتنا المشتركة الدائمة في الابتعاد عن صخب الدنيا وتكلف الناس، والبحث عن السلام والراحة في أبسط الأشياء.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- العهود والميثاق -->
+        <section class="vows-section fade-in">
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+                <span class="sub-title">عهد ووعد</span>
+                <h2>أسس بيتنا وسكينتنا</h2>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                عهود صادقة نبني عليها حياتنا يوماً بعد يوم، ونتذكرها دائماً مهما تبدلت الظروف:
+            </p>
+
+            <ul class="vow-list">
+                <li class="vow-item">
+                    <span class="vow-num">٠١</span>
+                    <div class="vow-text">
+                        <h4>أن نكون سكناً وملاذاً</h4>
+                        <p>أن يظل بيتنا هو المكان الذي نهرب إليه من العالم، لا نحمل فيه إلا الهدوء والراحة والاحتواء.</p>
+                    </div>
+                </li>
+                <li class="vow-item">
+                    <span class="vow-num">٠٢</span>
+                    <div class="vow-text">
+                        <h4>الصدق والوضوح التام</h4>
+                        <p>أن تظل الصراحة هي لغتنا الأولى، نتشارك الهموم قبل الأفراح، ونتجاوز أي عثرة بالتفاهم والود.</p>
+                    </div>
+                </li>
+                <li class="vow-item">
+                    <span class="vow-num">٠٣</span>
+                    <div class="vow-text">
+                        <h4>العون على طاعة الله</h4>
+                        <p>أن نأخذ بأيدي بعضنا دائماً نحو ما يحبه الله ويرضاه، وأن يكون بيتنا مباركاً بالخير والذكر.</p>
+                    </div>
+                </li>
+                <li class="vow-item">
+                    <span class="vow-num">٠٤</span>
+                    <div class="vow-text">
+                        <h4>التقدير والشراكة الحقيقية</h4>
+                        <p>أن أظل سندكِ وظلكِ الحامي، مقدراً لكل جهد وصبر، وشريكاً لكِ في كل خطوة ومرحلة قادمة.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- الرسالة السرية والتفاعلية -->
+        <section class="interactive-section fade-in">
+            <button class="btn-reveal" onclick="toggleSecretMessage()">اضغطي هنا لقراءة رسالة خاصة</button>
+            
+            <div class="secret-message" id="secretMsg">
+                <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);">إلى زوجتي الغالية هاجر،</h3>
+                <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.9;">
+                    الحمد لله الذي يسّر لنا طريق الحلال، وجعل كل خطوة مشيناها بعونه وتوفيقه. أعدكِ أن أكون لكِ السند والأمان، وأن أصون هذا الميثاق بكل ما أوتيت من قوة. شكراً لوجودكِ في حياتي، وشكراً لقلبكِ النقي الذي جعل لكل تعب مررنا به معنى وقيمة.
+                </p>
+                <div style="margin-top: 1.5rem; font-weight: 700; color: var(--accent);" class="serif">
+                    — زوجكِ ومحبكِ، عبد الرحمن
+                </div>
+            </div>
+        </section>
+
+        <!-- الفوتر -->
+        <footer>
+            <p class="serif">صُنع بكل حب وتقدير | عهد يمتد لعمر كامل بإذن الله</p>
+        </footer>
+    </div>
+
+    <!-- كود الجافاسكريبت للتفاعل والحركة -->
+    <script>
+        // إظهار وإخفاء الرسالة السرية
+        function toggleSecretMessage() {
+            const msg = document.getElementById('secretMsg');
+            const btn = document.querySelector('.btn-reveal');
+            
+            if (msg.classList.contains('active')) {
+                msg.classList.remove('active');
+                btn.textContent = 'اضغطي هنا لقراءة رسالة خاصة';
+            } else {
+                msg.classList.add('active');
+                btn.textContent = 'إغلاق الرسالة';
+                // التمرير السلس للرسالة
+                setTimeout(() => {
+                    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 200);
+            }
+        }
+
+        // تأثيرات الظهور عند التمرير (Scroll Reveal)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
